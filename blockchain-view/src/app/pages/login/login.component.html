@@ -1,0 +1,24 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-9 col-sm-12 col-12">
+            <div class="card mx-auto">
+                <h4 class="card-header text-center text-white bg-primary p-4"><strong>Iniciar Sesión</strong></h4>
+                <div class="card-body m-3">
+                    <div class="card-text">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email</label>
+                                <input [(ngModel)]="email" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <input [(ngModel)]="password" name="password" type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <button (click)="auth.login(this.email, this.password)" type="submit" class="btn btn-primary" [disabled]="!email || !password">Continuar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

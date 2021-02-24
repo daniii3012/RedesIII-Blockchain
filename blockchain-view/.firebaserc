@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "blockchain-redesiii": {
+      "hosting": {
+        "blockchain-view": [
+          "blockchain-redesiii"
+        ]
+      }
+    }
+  }
+}

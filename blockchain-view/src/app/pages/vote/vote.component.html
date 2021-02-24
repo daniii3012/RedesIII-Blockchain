@@ -1,0 +1,41 @@
+<div *ngIf="userData">
+    <div *ngIf="userData.role != 'admin'" class="container">
+        <div *ngIf="!vote else alreadyVote" class="row mt-3 justify-content-center text-center">
+            <div class="col">
+                <div class="card">
+                    <img src="https://dummyimage.com/400x400/ff0000/ff0000" class="card-img-top" alt="Opcion 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Rojo</h5>
+                        <a (click)="vote_1()" class="btn btn-success">Votar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://dummyimage.com/400x400/0000ff/0000ff" class="card-img-top" alt="Opcion 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Azul</h5>
+                        <a (click)="vote_2()" class="btn btn-success">Votar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #alreadyVote>
+            <div class="row mt-3">
+                <div class="alert alert-success" role="alert">
+                    Voto realizado.
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>
+
+<div *ngIf="userData">
+    <div *ngIf="userData.role == 'admin'" class="container">
+        <div class="card m-3">
+            <div class="card-body">
+                <a class="btn btn-secondary" routerLink="/admin" role="button">Administrar Blockchain</a>
+            </div>
+        </div>
+    </div>
+</div>
