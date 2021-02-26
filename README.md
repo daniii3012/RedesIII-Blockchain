@@ -1,6 +1,9 @@
 # Sistema de votaciones electronicas mediante el uso de una Blockchain
 ## Blockchain
 
+Fabio Andrés Ortiz 20171020051
+Daniel Alejandro Montiel 20171020049
+
 La implementacion de la blockchain se llevo acabo simulandola desde Python y Flask.
 
 Instalacion de dependencias
