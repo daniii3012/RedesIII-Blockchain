@@ -36,7 +36,8 @@ export class AdminComponent implements OnInit {
   mine() {
     this.blockchain.mine().subscribe(data => {
       console.log(data)
-    });
+    },
+    err => window.location.reload());
   }
 
 }

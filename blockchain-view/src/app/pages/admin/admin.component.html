@@ -7,7 +7,7 @@
     </div>
     <div class="card m-3">
         <div class="card-body">
-            <h5 class="card-title">Transacciones Sin Confirmar</h5>
+            <h5 class="card-title">Votos Sin Confirmar</h5>
             <div class="accordion" id="accordionExample">
                 <div *ngFor="let unconfirmedTx of unconfirmedTx; index as i;" class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
@@ -32,18 +32,19 @@
                 <div *ngFor="let chain of chain.chain" class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
                         <button *ngIf="chain.index == 0" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" attr.data-bs-target="#data{{ chain.hash }}" aria-expanded="false">
-                            Bloque Genesis
+                            <strong>Bloque Genesis:&nbsp;</strong> {{ chain.hash }}
                         </button>
                         <button *ngIf="chain.index != 0" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" attr.data-bs-target="#data{{ chain.hash }}" aria-expanded="false">
-                            {{ chain.hash }}
+                            <strong>Bloque:&nbsp;</strong> {{ chain.hash }}
                         </button>
                     </h2>
                     <div id="data{{ chain.hash }}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <strong>Index: </strong>{{ chain.index }}<br>
                             <strong>Hash: </strong>{{ chain.hash }}<br>
-                            <strong>Hash Anterior: </strong>{{ chain.previous_hash }}<br>
-                            <strong>Transacciones: </strong><br>
+                            <strong>Bloque Anterior: </strong>{{ chain.previous_hash }}<br>
+                            <strong>Hora: </strong>{{ chain.timestamp * 1000 | date: 'MMMM dd, yyyy. hh:mm aa' }}<br>
+                            <strong>Votos: </strong><br>
                             <div class="accordion" id="accordion2">
                                 <div *ngFor="let transaction of chain.transactions; index as j;" class="accordion-item">
                                     <h2 class="accordion-header" id="headingOne">
